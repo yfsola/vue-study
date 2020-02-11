@@ -1,14 +1,14 @@
 // 数组响应式
 // 1、替换数组原型中7个方法
 const originalProto = Array.prototype;
-//备份一个，修改备份
 
+//备份一个，修改备份,不进行直接修改原型
 const arrayProto = Object.create(originalProto);
-['push','pop','shift','unshift'].forEach(method => {
+['push','pop','shift','unshift','splice','reverse','sort'].forEach(method => {
   arrayProto[method] = function() {
-  //原始操作
-
+    //原始操作
     originalProto[method].apply(this,arguments)
+    //覆盖操作：通知更新
     console.log('数组执行：'+method+'操作')
   }
 
