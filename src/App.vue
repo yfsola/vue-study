@@ -9,12 +9,12 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 // import HelloWorld from './components/HelloWorld.vue';
-import Hello from './components/Hello'
+import Hello from './components/Hello.vue';
 
 @Component({
   components: {
     // HelloWorld,
-    Hello
+    Hello,
   },
 })
 export default class App extends Vue {}
